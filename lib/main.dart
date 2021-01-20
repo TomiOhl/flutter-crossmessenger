@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:kotprog/dialogs/new_chat.dart';
+import 'package:kotprog/profile_screen.dart';
 import 'package:kotprog/widgets/chat_list.dart';
+import 'package:provider/provider.dart';
 
 import 'chat_screen.dart';
+import 'models/profile.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => Profile(),
+      child: MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +30,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => MyHomePage(title: "CrossMessenger"),
         "/chat": (context) => ChatPage(),
+        "/profile": (context) => ProfilePage(),
       },
     );
   }
@@ -50,22 +59,24 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            tooltip: "Profil",
+            onPressed: () {
+              Navigator.of(context).pushNamed("/profile");
+            },
+          )
+        ],
       ),
       body: Container(
         child: ChatList(),
       ),
       floatingActionButton:
-        new NewChatButton(onChatCreated: null)
-      // new Builder(builder: (BuildContext context) {
-      //   return new FloatingActionButton(
-      //       onPressed: () {
-      //         Scaffold.of(context)
-      //             .showSnackBar(new SnackBar(content: new Text('New chat dialog should appear')));
-      //       },
-      //     tooltip: 'New message',
-      //     child: Icon(Icons.add),
-      //   );
-      // }),
+        new NewChatButton(onChatCreated: null),
     );
   }
 }

@@ -26,19 +26,20 @@ class MessageCard extends StatelessWidget {
               color: Colors.white.withOpacity(0.5),
               spreadRadius: -5,
               offset: Offset(-5, -5),
-              blurRadius: 20,
+              blurRadius: 3,
             ),
             BoxShadow(
-              color: Colors.grey[900].withOpacity(0.3),
-              spreadRadius: 2,
-              offset: Offset(7, 7),
-              blurRadius: 15,
+              color: Colors.grey[900].withOpacity(0.1),
+              spreadRadius: 1,
+              offset: Offset(3, 3),
+              blurRadius: 3,
             ),
           ],
         ),
         child: Column(
           children: [
             Container(
+              alignment: AlignmentDirectional.topStart,
               padding: padding,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

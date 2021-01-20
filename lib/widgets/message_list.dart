@@ -10,10 +10,10 @@ class MessageList extends StatelessWidget {
     var message = MSGS[index];
     return Container(
       padding: EdgeInsets.symmetric(
-        vertical: 20,
+        vertical: 5,
         horizontal: 10,
       ),
-      height: 150,
+      height: 100,
       child: Stack(
         children: [
           Positioned.fill(

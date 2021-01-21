@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kotprog/languages/localizations.dart';
 import 'package:kotprog/models/message.dart';
 
 class MessageCard extends StatelessWidget {
@@ -74,11 +75,11 @@ showDetailsDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text("Részletek"),
+        title: Text(CustomLocalizations.of(context).details),
         content: Text("We need proper db for this."),
         actions: [
           FlatButton(
-            child: Text("OK"),
+            child: Text(CustomLocalizations.of(context).ok),
             textColor: Theme.of(context).accentColor,
             onPressed: () {
               Navigator.of(context).pop();

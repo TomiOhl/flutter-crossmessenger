@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kotprog/languages/localizations.dart';
 
 class NewChatFormDialog extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
     // Creates a dialog
     return SimpleDialog(
       title: Container(
-        child: Text("Új chat létrehozása"),
+        child: Text(CustomLocalizations.of(context).createNewChat),
         alignment: Alignment.center,
       ),
       contentPadding: EdgeInsets.all(10),
@@ -26,11 +27,11 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
               TextFormField(
                 controller: _titleController,
                 decoration: InputDecoration(
-                  labelText: "Név",
+                  labelText: CustomLocalizations.of(context).name,
                 ),
                 validator: (value) {
                   if (value.isEmpty) {
-                    return "A mező nem lehet üres";
+                    return CustomLocalizations.of(context).fieldEmpty;
                   }
                   return null;
                 },
@@ -43,7 +44,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text("Mégse"),
+                    child: Text(CustomLocalizations.of(context).cancel),
                   ),
                   FlatButton(
                     onPressed: () {
@@ -54,7 +55,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
                        }
                     },
                     textColor: Theme.of(context).accentColor,
-                    child: Text("Létrehozás"),
+                    child: Text(CustomLocalizations.of(context).create),
                   ),
                 ],
               ),

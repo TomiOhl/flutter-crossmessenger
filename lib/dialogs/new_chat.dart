@@ -1,5 +1,6 @@
 // Manages the chat creation
 import 'package:flutter/material.dart';
+import 'package:kotprog/languages/localizations.dart';
 import 'package:kotprog/models/chat.dart';
 
 import 'new_chat_form.dart';
@@ -26,7 +27,7 @@ class NewChatButton extends StatelessWidget {
         ..removeCurrentSnackBar()
         ..showSnackBar(
           SnackBar(
-            content: Text("Chat létrehozva"),
+            content: Text(CustomLocalizations.of(context).chatCreated),
           ),
         );
     }

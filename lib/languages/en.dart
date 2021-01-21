@@ -1,0 +1,16 @@
+const ENGLISH_TEXTS = {
+  'appName': 'CrossMessenger',
+  'profile': 'Profile',
+  'newMessageAs': 'New message as',
+  'fieldEmpty': 'The field cannot be empty',
+  'send': 'Send',
+  'changeNick': 'Edit nickname',
+  'modify': 'Modify',
+  'chatCreated': 'Chat created',
+  'createNewChat': 'Create new chat',
+  'name': 'Name',
+  'cancel': 'Cancel',
+  'ok': 'OK',
+  'create': 'Create',
+  'details': 'Details',
+};

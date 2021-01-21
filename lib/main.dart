@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kotprog/dialogs/new_chat.dart';
 import 'package:kotprog/profile_screen.dart';
 import 'package:kotprog/widgets/chat_list.dart';
 import 'package:provider/provider.dart';
 
 import 'chat_screen.dart';
+import 'languages/localizations.dart';
 import 'models/profile.dart';
 
 void main() {
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CrossMessenger',
+      title: "CrossMessenger",
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.redAccent,
@@ -28,10 +30,19 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "/",
       routes: {
-        "/": (context) => MyHomePage(title: "CrossMessenger"),
+        "/": (context) => MyHomePage(title: CustomLocalizations.of(context).appName),
         "/chat": (context) => ChatPage(),
         "/profile": (context) => ProfilePage(),
       },
+      localizationsDelegates: [
+        CustomLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''),
+        const Locale('hu', ''),
+      ],
     );
   }
 }
@@ -65,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.person,
               color: Colors.white,
             ),
-            tooltip: "Profil",
+            tooltip: CustomLocalizations.of(context).profile,
             onPressed: () {
               Navigator.of(context).pushNamed("/profile");
             },

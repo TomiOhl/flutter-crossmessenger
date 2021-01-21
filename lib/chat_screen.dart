@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kotprog/widgets/message_list.dart';
 import 'package:provider/provider.dart';
 
+import 'languages/localizations.dart';
 import 'models/profile.dart';
 
 class ChatPage extends StatefulWidget {
@@ -27,8 +28,6 @@ class _ChatPageState extends State<ChatPage> {
               Expanded(
                 child: MessageList(),
               ),
-
-              //asd
               Form(
                 key: _formKey,
                 child:
@@ -44,11 +43,11 @@ class _ChatPageState extends State<ChatPage> {
                         TextFormField(
                           controller: _newMsgController,
                           decoration: InputDecoration(
-                            labelText: "Üzenet írása mint " + Provider.of<Profile>(context).nick,
+                            labelText: CustomLocalizations.of(context).newMessageAs + " " + Provider.of<Profile>(context).nick,
                           ),
                           validator: (value) {
                             if (value.isEmpty) {
-                              return "A mező nem lehet üres";
+                              return CustomLocalizations.of(context).fieldEmpty;
                             }
                             return null;
                           },
@@ -65,7 +64,7 @@ class _ChatPageState extends State<ChatPage> {
                               Icons.send,
                               color: Colors.white,
                             ),
-                            tooltip: "Küldés",
+                            tooltip: CustomLocalizations.of(context).send,
                             onPressed: () {
                               if (_formKey.currentState.validate()) {
                                 setState(() {
@@ -79,7 +78,6 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
               ),
-              //asd
             ],
           ),
     );

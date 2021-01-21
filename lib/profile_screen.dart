@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'languages/localizations.dart';
 import 'models/profile.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
     _nick = Provider.of<Profile>(context).nick;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        title: Text(CustomLocalizations.of(context).profile),
       ),
       body: Container(
         padding: EdgeInsets.all(10),
@@ -50,11 +51,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             TextFormField(
                               controller: _nickController,
                               decoration: InputDecoration(
-                                labelText: "Profilnév módosítása",
+                                labelText: CustomLocalizations.of(context).changeNick,
                               ),
                               validator: (value) {
                                 if (value.isEmpty) {
-                                  return "A mező nem lehet üres";
+                                  return CustomLocalizations.of(context).fieldEmpty;
                                 }
                                 return null;
                               },
@@ -74,7 +75,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           },
                           color: Theme.of(context).accentColor,
                           textColor: Colors.white,
-                          child: Text("Módosítás"),
+                          child: Text(CustomLocalizations.of(context).modify),
                         ),
                       ],
                     ),

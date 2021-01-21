@@ -11,7 +11,7 @@ class MessageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell( // ez azért kell, mert van onTapja, illetve ripple-t jelenít meg a GestureDetectorral ellentétben
       onTap: () {
-        Navigator.pushNamed(context, "/chat");  //TODO: maybe profile details?
+        showDetailsDialog(context);
       },
       child: Ink( // itt pedig a sima container színe eltakarná a ripple-t, ez viszont megjeleníti a tetején
         height: 130,
@@ -67,4 +67,25 @@ class MessageCard extends StatelessWidget {
       ),
     );
   }
+}
+
+showDetailsDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text("Részletek"),
+        content: Text("We need proper db for this."),
+        actions: [
+          FlatButton(
+            child: Text("OK"),
+            textColor: Theme.of(context).accentColor,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

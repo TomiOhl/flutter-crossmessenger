@@ -34,6 +34,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
                   }
                   return null;
                 },
+                textCapitalization: TextCapitalization.sentences,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

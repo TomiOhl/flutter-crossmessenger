@@ -1,7 +1,9 @@
 // Manages the chat creation
 import 'package:flutter/material.dart';
+import 'package:kotprog/db/db_access.dart';
 import 'package:kotprog/languages/localizations.dart';
 import 'package:kotprog/models/chat.dart';
+import 'package:provider/provider.dart';
 
 import 'new_chat_form.dart';
 
@@ -11,15 +13,14 @@ class NewChatButton extends StatelessWidget {
   NewChatButton({Key key, @required this.onChatCreated}) : super(key: key);
 
   Future<void> _newChat(BuildContext context) async {
-    var address = await showDialog<Chat>(
+    var chat = await showDialog<Chat>(
       context: context,
       builder: (BuildContext context) => NewChatFormDialog(),
     );
-    if (address != null) {
-      // Get the repository through Provider
-      //var repository = context.read<ProfileRepository>();
+    if (chat != null) {
+      var dbAccess = context.read<DbAccess>();
       // Save the address into the DB
-      //await repository.addAddress(address);
+      await dbAccess.addChat(chat);
       // Call the callback
       await onChatCreated();
       // Show info to the user

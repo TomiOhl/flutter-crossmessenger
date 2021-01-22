@@ -6,16 +6,18 @@ class Chat {
     this.id,
     this.title
   });
-}
 
-// Pár chat, amit megjelenítünk
-const CHATS = [
-  Chat(
-      id: 0,
-      title: 'Generális'
-  ),
-  Chat(
-      id: 1,
-      title: 'Shitposta'
-  ),
-];
+  set id(int newId) => id = newId;
+  set title(String newTitle) => title = newTitle;
+
+  Map<String, dynamic> toMap() {
+    Map map = <String, dynamic>{
+      'id': id,
+      'title': title,
+    };
+    if (id != null) {
+      map['id'] = id;
+    }
+    return map;
+  }
+}

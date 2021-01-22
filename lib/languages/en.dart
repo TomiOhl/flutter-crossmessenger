@@ -13,4 +13,5 @@ const ENGLISH_TEXTS = {
   'ok': 'OK',
   'create': 'Create',
   'details': 'Details',
+  'someError': 'Something went wrong',
 };

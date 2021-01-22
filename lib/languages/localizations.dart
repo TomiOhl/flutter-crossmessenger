@@ -42,6 +42,7 @@ class CustomLocalizations {
   String get ok => stringById('ok');
   String get create => stringById('create');
   String get details => stringById('details');
+  String get someError => stringById('someError');
 }
 
 // Segédosztály, ami az aktuális nyelv alapján hoz létre egy

@@ -6,13 +6,23 @@ import 'package:kotprog/widgets/chat_list.dart';
 import 'package:provider/provider.dart';
 
 import 'chat_screen.dart';
+import 'db/db_access.dart';
+import 'db/sql.dart';
 import 'languages/localizations.dart';
 import 'models/profile.dart';
 
 void main() {
+  final sql = Sql();
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => Profile(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => Profile(),
+        ),
+        Provider(
+          create: (_) => DbAccess(sql: sql),
+        ),
+      ],
       child: MyApp(),
     )
   );
@@ -84,10 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Container(
+        key: UniqueKey(),
         child: ChatList(),
       ),
       floatingActionButton:
-        new NewChatButton(onChatCreated: null),
+        new NewChatButton(onChatCreated: () => setState((){}) ),
     );
   }
 }

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:kotprog/widgets/message_list.dart';
 import 'package:provider/provider.dart';
 
+import 'db/db_access.dart';
 import 'languages/localizations.dart';
+import 'models/chat.dart';
+import 'models/message.dart';
 import 'models/profile.dart';
 
 class ChatPage extends StatefulWidget {
@@ -15,18 +18,41 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _newMsgController = TextEditingController();
+  Chat chat;
+
+  // Elsendeli a message-t, majd frissíti az állapotot
+  void _sendMessage() async {
+    if (_formKey.currentState.validate()) {
+      var msg = Message(
+          chatId: chat.id,
+          sender: Provider.of<Profile>(context, listen: false).nick,
+          content: _newMsgController.value.text,
+          timestamp: DateTime.now().toString()
+      );
+      if (msg != null) {
+        var dbAccess = context.read<DbAccess>();
+        // Save the address into the DB
+        await dbAccess.addMessage(msg);
+        setState((){
+          _newMsgController.clear();
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    chat = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text(ModalRoute.of(context).settings.arguments),
+        title: Text(chat.title),
       ),
       body:
           Column(
             children: [
               Expanded(
-                child: MessageList(),
+                key: UniqueKey(),
+                child: MessageList(chatId: chat.id),
               ),
               Form(
                 key: _formKey,
@@ -65,13 +91,7 @@ class _ChatPageState extends State<ChatPage> {
                               color: Colors.white,
                             ),
                             tooltip: CustomLocalizations.of(context).send,
-                            onPressed: () {
-                              if (_formKey.currentState.validate()) {
-                                setState(() {
-                                  // Elsendeli a message-t, majd frissíti az állapotot
-                                });
-                              }
-                            },
+                            onPressed: _sendMessage,
                           ),
                       ),
                     ],

@@ -13,4 +13,5 @@ const HUNGARIAN_TEXTS = {
   'ok': 'OK',
   'create': 'Létrehozás',
   'details': 'Részletek',
+  'someError': 'Valami hiba történt',
 };

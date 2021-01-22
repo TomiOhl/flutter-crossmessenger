@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kotprog/languages/localizations.dart';
+import 'package:kotprog/models/chat.dart';
 
 class NewChatFormDialog extends StatefulWidget {
   @override
@@ -50,7 +51,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
                     onPressed: () {
                        if (_formKey.currentState.validate()) {
                          Navigator.of(context).pop(
-                          // Chat(title: _titleController.value.text),
+                           Chat(title: _titleController.value.text),
                          );
                        }
                     },

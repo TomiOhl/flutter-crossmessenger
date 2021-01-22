@@ -11,7 +11,7 @@ class ChatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell( // ez azért kell, mert van onTapja, illetve ripple-t jelenít meg a GestureDetectorral ellentétben
       onTap: () {
-        Navigator.pushNamed(context, "/chat", arguments: chat.title);
+        Navigator.pushNamed(context, "/chat", arguments: chat);
       },
       child: Ink( // itt pedig a sima container színe eltakarná a ripple-t, ez viszont megjeleníti a tetején
         height: 130,

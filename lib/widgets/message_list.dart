@@ -30,18 +30,10 @@ class _MessageListState extends State<MessageList> {
         vertical: 5,
         horizontal: 10,
       ),
-      height: 100,
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: Container(
-              child: MessageCard(
-                message: msgs[index],
-              ),
-            ),
-          ),
-        ],
-      ),
+      child:
+        MessageCard(
+          message: msgs[index],
+        ),
     );
   }
 

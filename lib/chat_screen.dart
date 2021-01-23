@@ -72,7 +72,7 @@ class _ChatPageState extends State<ChatPage> {
                             labelText: CustomLocalizations.of(context).newMessageAs + " " + Provider.of<Profile>(context).nick,
                           ),
                           validator: (value) {
-                            if (value.isEmpty) {
+                            if (value.trim().isEmpty) {
                               return CustomLocalizations.of(context).fieldEmpty;
                             }
                             return null;

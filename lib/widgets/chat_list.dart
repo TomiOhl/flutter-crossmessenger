@@ -28,18 +28,10 @@ class _ChatListState extends State<ChatList> {
         vertical: 10,
         horizontal: 10,
       ),
-      height: 100,
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: Container(
-              child: ChatCard(
-                chat: chats[index],
-              ),
-            ),
-          ),
-        ],
-      ),
+      child:
+        ChatCard(
+          chat: chats[index],
+        ),
     );
   }
 

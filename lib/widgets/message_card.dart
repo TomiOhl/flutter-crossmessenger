@@ -4,9 +4,8 @@ import 'package:kotprog/models/message.dart';
 
 class MessageCard extends StatelessWidget {
   final Message message;
-  final EdgeInsetsGeometry padding;
 
-  const MessageCard({Key key, this.message, this.padding}) : super(key: key);
+  const MessageCard({Key key, this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +13,14 @@ class MessageCard extends StatelessWidget {
       onTap: () {
         showDetailsDialog(context);
       },
+      customBorder: RoundedRectangleBorder( // hogy a ripple kerek legyen
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Ink( // itt pedig a sima container színe eltakarná a ripple-t, ez viszont megjeleníti a tetején
-        height: 130,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(
+          borderRadius: BorderRadius.all( //hogy a látható widget kerek legyen
             Radius.circular(20),
           ),
           boxShadow: [
@@ -38,29 +39,18 @@ class MessageCard extends StatelessWidget {
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              alignment: AlignmentDirectional.topStart,
-              padding: padding,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    message.sender,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Text(
-                      message.content,
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                  ),
-                ],
+            Text(
+              message.sender,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              message.content,
+              style: TextStyle(
+                color: Colors.grey[700],
               ),
             ),
           ],

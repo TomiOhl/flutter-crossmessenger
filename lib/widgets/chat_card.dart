@@ -13,12 +13,14 @@ class ChatCard extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, "/chat", arguments: chat);
       },
+      customBorder: RoundedRectangleBorder( // hogy a ripple kerek legyen
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Ink( // itt pedig a sima container színe eltakarná a ripple-t, ez viszont megjeleníti a tetején
-        height: 130,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(
+          borderRadius: BorderRadius.all( //hogy a látható widget kerek legyen
             Radius.circular(20),
           ),
           boxShadow: [

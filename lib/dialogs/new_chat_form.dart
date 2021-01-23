@@ -31,7 +31,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
                   labelText: CustomLocalizations.of(context).name,
                 ),
                 validator: (value) {
-                  if (value.isEmpty) {
+                  if (value.trim().isEmpty) {
                     return CustomLocalizations.of(context).fieldEmpty;
                   }
                   return null;

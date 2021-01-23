@@ -54,7 +54,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 labelText: CustomLocalizations.of(context).changeNick,
                               ),
                               validator: (value) {
-                                if (value.isEmpty) {
+                                if (value.trim().isEmpty) {
                                   return CustomLocalizations.of(context).fieldEmpty;
                                 }
                                 return null;

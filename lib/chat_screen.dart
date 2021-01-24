@@ -81,7 +81,10 @@ class _ChatPageState extends State<ChatPage> {
                         TextFormField(
                           controller: _newMsgController,
                           decoration: InputDecoration(
-                            labelText: CustomLocalizations.of(context).newMessageAs + " " + Provider.of<Profile>(context).nick,
+                            labelText: Provider.of<Profile>(context).nick.trim().isEmpty ?
+                              CustomLocalizations.of(context).newMessageAnonymous
+                              :
+                              CustomLocalizations.of(context).newMessageAs + " " + Provider.of<Profile>(context).nick,
                           ),
                           validator: (value) {
                             if (value.trim().isEmpty) {

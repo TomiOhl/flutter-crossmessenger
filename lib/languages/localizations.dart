@@ -31,6 +31,7 @@ class CustomLocalizations {
   String get appName => stringById('appName');
   String get profile => stringById('profile');
   String get newMessageAs => stringById('newMessageAs');
+  String get newMessageAnonymous => stringById('newMessageAnonymous');
   String get fieldEmpty => stringById('fieldEmpty');
   String get send => stringById('send');
   String get changeNick => stringById('changeNick');

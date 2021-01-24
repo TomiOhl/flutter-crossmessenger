@@ -66,8 +66,11 @@ class MessageCard extends StatelessWidget {
         return AlertDialog(
           title: Text(CustomLocalizations.of(context).details),
           content: Text(
-              "${CustomLocalizations.of(context).sender}: ${message.sender}\n" +
-              "${CustomLocalizations.of(context).timestamp}: ${message.timestamp}"
+              message.sender.trim().isEmpty ?
+                "${CustomLocalizations.of(context).timestamp}: ${message.timestamp}"
+                :
+                "${CustomLocalizations.of(context).sender}: ${message.sender}\n" +
+                "${CustomLocalizations.of(context).timestamp}: ${message.timestamp}"
           ),
           actions: [
             FlatButton(

@@ -2,6 +2,7 @@ const HUNGARIAN_TEXTS = {
   'appName': 'CrossMessenger',
   'profile': 'Profil',
   'newMessageAs': 'Üzenet írása mint',
+  'newMessageAnonymous': 'Üzenet írása névtelenül',
   'fieldEmpty': 'A mező nem lehet üres',
   'send': 'Küldés',
   'changeNick': 'Nicknév módosítása',

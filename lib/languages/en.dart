@@ -2,6 +2,7 @@ const ENGLISH_TEXTS = {
   'appName': 'CrossMessenger',
   'profile': 'Profile',
   'newMessageAs': 'New message as',
+  'newMessageAnonymous': 'New message anonymously',
   'fieldEmpty': 'The field cannot be empty',
   'send': 'Send',
   'changeNick': 'Edit nickname',

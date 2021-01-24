@@ -35,8 +35,8 @@ class DbAccess {
     final Database database = await sql.database;
     List<Map<String, dynamic>> result = await database.query(
         'messages',
-        where: 'chatId = ?',
-        whereArgs: [chatId],
+        where: 'chatId = ? AND sender != ?',
+        whereArgs: [chatId, ""],
         groupBy: 'sender',
         orderBy: 'UPPER(sender)',   // apparently case sensitive alapból, úgyhogy konvertáljuk mindet nagyra
     );

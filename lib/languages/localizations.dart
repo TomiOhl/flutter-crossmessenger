@@ -43,6 +43,9 @@ class CustomLocalizations {
   String get create => stringById('create');
   String get details => stringById('details');
   String get someError => stringById('someError');
+  String get map => stringById('map');
+  String get latitude => stringById('latitude');
+  String get longitude => stringById('longitude');
 }
 
 // Segédosztály, ami az aktuális nyelv alapján hoz létre egy

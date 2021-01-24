@@ -14,4 +14,7 @@ const ENGLISH_TEXTS = {
   'create': 'Create',
   'details': 'Details',
   'someError': 'Something went wrong',
+  'map': 'Map',
+  'latitude': 'Latitude',
+  'longitude': 'Longitude',
 };

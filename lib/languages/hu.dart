@@ -14,4 +14,7 @@ const HUNGARIAN_TEXTS = {
   'create': 'Létrehozás',
   'details': 'Részletek',
   'someError': 'Valami hiba történt',
+  'map': 'Térkép',
+  'latitude': 'Szélességi kör',
+  'longitude': 'Hosszúsági kör',
 };

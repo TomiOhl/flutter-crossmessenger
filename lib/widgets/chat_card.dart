@@ -3,9 +3,8 @@ import 'package:kotprog/models/chat.dart';
 
 class ChatCard extends StatelessWidget {
   final Chat chat;
-  final EdgeInsetsGeometry padding;
 
-  const ChatCard({Key key, this.chat, this.padding}) : super(key: key);
+  const ChatCard({Key key, this.chat}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +38,15 @@ class ChatCard extends StatelessWidget {
           ],
         ),
         child:
-            Container(
-              padding: padding,
-              child: Center(
-                child:
-                  Text(
-                    chat.title,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
+          Center(
+            child:
+              Text(
+                chat.title,
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
-            ),
+          ),
       ),
     );
   }

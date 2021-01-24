@@ -46,6 +46,7 @@ class _ChatListState extends State<ChatList> {
           if (snapshot.hasData) {
             child =
               ListView.builder(
+                physics: BouncingScrollPhysics(), // iOS-like overscroll animáció
                 itemCount: snapshot.data.length,
                 itemBuilder: (context, index) => _buildItemWithArgs(context, index, snapshot.data),
               );

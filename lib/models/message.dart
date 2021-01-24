@@ -3,7 +3,7 @@ class Message {
   final int chatId;
   final String sender;
   final String content;
-  final String timestamp;   //TODO: esetleg kezdeni ezzel valamit. jelenleg enélkül is tartja a sorrendet
+  final String timestamp;
 
   const Message({
     this.id,

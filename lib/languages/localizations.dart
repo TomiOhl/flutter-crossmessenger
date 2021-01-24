@@ -46,6 +46,9 @@ class CustomLocalizations {
   String get map => stringById('map');
   String get latitude => stringById('latitude');
   String get longitude => stringById('longitude');
+  String get sender => stringById('sender');
+  String get timestamp => stringById('timestamp');
+  String get participants => stringById('participants');
 }
 
 // Segédosztály, ami az aktuális nyelv alapján hoz létre egy

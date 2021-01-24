@@ -46,6 +46,18 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(chat.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.info_outline,
+              color: Colors.white,
+            ),
+            tooltip: CustomLocalizations.of(context).details,
+            onPressed: () {
+              Navigator.of(context).pushNamed("/chatinfo", arguments: chat);
+            },
+          )
+        ],
       ),
       body:
           Column(
@@ -87,7 +99,7 @@ class _ChatPageState extends State<ChatPage> {
                         child:
                           IconButton(
                             icon: Icon(
-                              Icons.send,
+                              Icons.send_outlined,
                               color: Colors.white,
                             ),
                             tooltip: CustomLocalizations.of(context).send,

@@ -30,6 +30,21 @@ class DbAccess {
     );
   }
 
+  // Egy chat résztvevőinek betöltése
+  Future<List<String>> loadChaParticipants(int chatId) async {
+    final Database database = await sql.database;
+    List<Map<String, dynamic>> result = await database.query(
+        'messages',
+        where: 'chatId = ?',
+        whereArgs: [chatId],
+        groupBy: 'sender',
+        orderBy: 'UPPER(sender)',   // apparently case sensitive alapból, úgyhogy konvertáljuk mindet nagyra
+    );
+    return List.generate(result.length, (i) {
+      return result[i]['sender'];
+    });
+  }
+
   // Chat eltávolítása
   // TODO: Ennek használata
   Future<void> removeChat(Chat chat) async {

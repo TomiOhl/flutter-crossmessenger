@@ -17,4 +17,7 @@ const ENGLISH_TEXTS = {
   'map': 'Map',
   'latitude': 'Latitude',
   'longitude': 'Longitude',
+  'sender': 'Sender',
+  'timestamp': 'Timestamp',
+  'participants': 'Participants',
 };

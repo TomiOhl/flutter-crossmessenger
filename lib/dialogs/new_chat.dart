@@ -40,7 +40,7 @@ class NewChatButton extends StatelessWidget {
       onPressed: () {
         _newChat(context);
       },
-      child: Icon(Icons.add),
+      child: Icon(Icons.add_outlined),
     );
   }
 }

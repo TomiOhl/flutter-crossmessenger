@@ -58,25 +58,28 @@ class MessageCard extends StatelessWidget {
       ),
     );
   }
-}
 
-showDetailsDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(CustomLocalizations.of(context).details),
-        content: Text("We need proper db for this."),
-        actions: [
-          FlatButton(
-            child: Text(CustomLocalizations.of(context).ok),
-            textColor: Theme.of(context).accentColor,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
+  showDetailsDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(CustomLocalizations.of(context).details),
+          content: Text(
+              "${CustomLocalizations.of(context).sender}: ${message.sender}\n" +
+              "${CustomLocalizations.of(context).timestamp}: ${message.timestamp}"
           ),
-        ],
-      );
-    },
-  );
+          actions: [
+            FlatButton(
+              child: Text(CustomLocalizations.of(context).ok),
+              textColor: Theme.of(context).accentColor,
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

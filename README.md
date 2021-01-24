@@ -5,7 +5,7 @@ Keresztplatformos mobilfejlesztés kötelező program
 | Funkció   |   Pontszám   |   Megvalósítás   |
 |----------------|----------------|------------|
 | Állapotkezelés Provider, vagy BLoC segítségével | 15| van |
-| Legalább 5 különböző képernyő, melyek interakcióba lépnek egymással, adatot küldenek egymásnak | 10| 3/5 van |
+| Legalább 5 különböző képernyő, melyek interakcióba lépnek egymással, adatot küldenek egymásnak | 10| 4/5 van |
 | Legalább 2 típusú dialógus ablak:               | 5 | van |
 | * amin keresztül információt jelenítünk meg     |   | chatben üzenetre kattintva |
 | * amin keresztül információt kérünk be          |   | új chat gombon |

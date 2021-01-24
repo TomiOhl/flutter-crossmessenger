@@ -17,4 +17,7 @@ const HUNGARIAN_TEXTS = {
   'map': 'Térkép',
   'latitude': 'Szélességi kör',
   'longitude': 'Hosszúsági kör',
+  'sender': 'Küldő',
+  'timestamp': 'Küldés ideje',
+  'participants': 'Résztvevők',
 };

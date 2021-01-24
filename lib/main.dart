@@ -5,6 +5,7 @@ import 'package:kotprog/profile_screen.dart';
 import 'package:kotprog/widgets/chat_list.dart';
 import 'package:provider/provider.dart';
 
+import 'chat_info_screen.dart';
 import 'chat_screen.dart';
 import 'db/db_access.dart';
 import 'db/sql.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => MyHomePage(title: CustomLocalizations.of(context).appName),
         "/chat": (context) => ChatPage(),
         "/profile": (context) => ProfilePage(),
+        "/chatinfo": (context) => ChatInfoPage(),
       },
       localizationsDelegates: [
         CustomLocalizations.delegate,
@@ -83,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.person,
+              Icons.person_outline,
               color: Colors.white,
             ),
             tooltip: CustomLocalizations.of(context).profile,

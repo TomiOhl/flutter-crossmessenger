@@ -54,7 +54,7 @@ class _ChatListState extends State<ChatList> {
             child =
               Text(CustomLocalizations.of(context).someError + ": ${snapshot.error}");
           } else {
-            child = Text("...");
+            child = Center(child: CircularProgressIndicator());
           }
           return child;
         },

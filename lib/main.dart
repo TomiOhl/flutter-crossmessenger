@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import 'chat_info_screen.dart';
 import 'chat_screen.dart';
+import 'contact_chooser_screen.dart';
 import 'db/db_access.dart';
 import 'db/sql.dart';
 import 'languages/localizations.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         "/chat": (context) => ChatPage(),
         "/profile": (context) => ProfilePage(),
         "/chatinfo": (context) => ChatInfoPage(),
+        "/choosecontact": (context) => ContactChooserPage(),
       },
       localizationsDelegates: [
         CustomLocalizations.delegate,
@@ -92,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.of(context).pushNamed("/profile");
             },
-          )
+          ),
         ],
       ),
       body: Container(

@@ -50,6 +50,8 @@ class CustomLocalizations {
   String get sender => stringById('sender');
   String get timestamp => stringById('timestamp');
   String get participants => stringById('participants');
+  String get chooseContact => stringById('chooseContact');
+  String get cannotAccessContacts => stringById('cannotAccessContacts');
 }
 
 // Segédosztály, ami az aktuális nyelv alapján hoz létre egy

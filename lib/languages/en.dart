@@ -21,4 +21,6 @@ const ENGLISH_TEXTS = {
   'sender': 'Sender',
   'timestamp': 'Timestamp',
   'participants': 'Participants',
+  'chooseContact': 'Choose from contacts',
+  'cannotAccessContacts': 'Cannot access contacts',
 };

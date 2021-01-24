@@ -56,7 +56,7 @@ class _MessageListState extends State<MessageList> {
             child =
                 Text(CustomLocalizations.of(context).someError + ": ${snapshot.error}");
           } else {
-            child = Text("...");
+            child = Center(child: CircularProgressIndicator());
           }
           return child;
         },

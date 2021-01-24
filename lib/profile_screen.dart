@@ -1,4 +1,6 @@
+import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:kotprog/widgets/map.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +24,22 @@ class _ProfilePageState extends State<ProfilePage> {
   TextEditingController _longController = TextEditingController();
   Map map = Map(mapController: new MapController());
 
+  void chooseContact(BuildContext context) async {
+    if (await Permission.contacts.request().isGranted) {
+      var contact = await Navigator.pushNamed(context, "/choosecontact") as Contact;
+      if (contact != null)
+        _nickController.text = contact.displayName;
+    } else if (await Permission.contacts.isPermanentlyDenied) {
+      openAppSettings();
+    } else {
+      Scaffold.of(context).showSnackBar(
+        SnackBar(
+          content:
+            Text(CustomLocalizations.of(context).cannotAccessContacts),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +89,19 @@ class _ProfilePageState extends State<ProfilePage> {
                               textInputAction: TextInputAction.done,
                               textCapitalization: TextCapitalization.words,
                             ),
+                        ),
+                        Builder(  // Builderbe wrappelve, hogy más legyen a context, így lehessen snackbart megjeleníteni
+                          builder: (context) =>
+                              IconButton(
+                                icon: Icon(
+                                  Icons.person_add,
+                                  color: Theme.of(context).accentColor,
+                                ),
+                                tooltip: CustomLocalizations.of(context).chooseContact,
+                                onPressed: () {
+                                  chooseContact(context);
+                                },
+                              ),
                         ),
                         RaisedButton(
                           onPressed: () {

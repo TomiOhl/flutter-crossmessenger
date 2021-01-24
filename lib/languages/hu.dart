@@ -21,4 +21,6 @@ const HUNGARIAN_TEXTS = {
   'sender': 'Küldő',
   'timestamp': 'Küldés ideje',
   'participants': 'Résztvevők',
+  'chooseContact': 'Választás a névjegyzékből',
+  'cannotAccessContacts': 'A névjegyzék nem érhető el',
 };

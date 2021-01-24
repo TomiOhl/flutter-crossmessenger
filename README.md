@@ -14,6 +14,6 @@ Keresztplatformos mobilfejlesztés kötelező program
 | Többnyelvű alkalmazás készítése, nyelvválasztási lehetőséggel | 10| van, de választó nincs |
 | Egy screen, ami alkalmazkodik a különböző méretű képernyőkhöz | 5 | Profil -> térkép |
 | Animáció | 5 |
-| Választás a nyévjegyzékből | 5 |
+| Választás a nyévjegyzékből | 5 | van |
 | Tesztek legalább 2 képernyőre | 15|
 | Google térkép használata | 10| openmaps van |

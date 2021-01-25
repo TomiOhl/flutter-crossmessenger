@@ -39,7 +39,7 @@ class _NewChatFormDialogState extends State<NewChatFormDialog> {
                 textCapitalization: TextCapitalization.sentences,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   FlatButton(
                     onPressed: () {

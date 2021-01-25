@@ -1,5 +1,6 @@
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
+import 'package:kotprog/widgets/profile_picture.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:kotprog/widgets/map.dart';
@@ -53,14 +54,18 @@ class _ProfilePageState extends State<ProfilePage> {
         child: ListView(
           physics: BouncingScrollPhysics(), // iOS-like overscroll animáció
           children: <Widget>[
-            Text(
-              "<!-- TODO: profilkép és módosítás gomb -->"
-            ),
-            Text(
-              _nick,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 42,
+            Center(
+              child: Column(
+                children: <Widget>[
+                  ProfilePicture(),
+                  Text(
+                        _nick,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 42,
+                        ),
+                      ),
+                ],
               ),
             ),
             Form(

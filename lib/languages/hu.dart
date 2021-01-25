@@ -23,4 +23,6 @@ const HUNGARIAN_TEXTS = {
   'participants': 'Résztvevők',
   'chooseContact': 'Választás a névjegyzékből',
   'cannotAccessContacts': 'A névjegyzék nem érhető el',
+  'takePicture': 'Profilkép készítése',
+  'takePictureUnsuccessful': 'Képkészítés sikertelen',
 };

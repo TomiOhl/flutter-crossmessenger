@@ -1,6 +1,8 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kotprog/dialogs/new_chat.dart';
+import 'package:kotprog/photo_taker_screen.dart';
 import 'package:kotprog/profile_screen.dart';
 import 'package:kotprog/widgets/chat_list.dart';
 import 'package:provider/provider.dart';
@@ -13,8 +15,11 @@ import 'db/sql.dart';
 import 'languages/localizations.dart';
 import 'models/profile.dart';
 
-void main() {
+Future<void> main(List<String> args) async {
   final sql = Sql();
+  WidgetsFlutterBinding.ensureInitialized();
+  final cameras = await availableCameras();
+  final camera = cameras.length > 0 ? cameras.first : null;
   runApp(
     MultiProvider(
       providers: [
@@ -24,6 +29,7 @@ void main() {
         Provider(
           create: (_) => DbAccess(sql: sql),
         ),
+        Provider.value(value: camera),
       ],
       child: MyApp(),
     )
@@ -47,6 +53,7 @@ class MyApp extends StatelessWidget {
         "/profile": (context) => ProfilePage(),
         "/chatinfo": (context) => ChatInfoPage(),
         "/choosecontact": (context) => ContactChooserPage(),
+        "/takepicture": (context) => PhotoTakerPage(),
       },
       localizationsDelegates: [
         CustomLocalizations.delegate,

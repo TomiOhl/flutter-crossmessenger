@@ -52,6 +52,8 @@ class CustomLocalizations {
   String get participants => stringById('participants');
   String get chooseContact => stringById('chooseContact');
   String get cannotAccessContacts => stringById('cannotAccessContacts');
+  String get takePicture => stringById('takePicture');
+  String get takePictureUnsuccessful => stringById('takePictureUnsuccessful');
 }
 
 // Segédosztály, ami az aktuális nyelv alapján hoz létre egy

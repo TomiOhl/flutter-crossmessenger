@@ -23,4 +23,6 @@ const ENGLISH_TEXTS = {
   'participants': 'Participants',
   'chooseContact': 'Choose from contacts',
   'cannotAccessContacts': 'Cannot access contacts',
+  'takePicture': 'Take a profile picture',
+  'takePictureUnsuccessful': 'Could not take picture',
 };

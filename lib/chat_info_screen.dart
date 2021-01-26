@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kotprog/widgets/chatinfo_anim_header.dart';
 import 'package:kotprog/widgets/participants_list.dart';
 
 import 'languages/localizations.dart';
@@ -11,8 +12,18 @@ class ChatInfoPage extends StatefulWidget {
   _ChatInfoPageState createState() => _ChatInfoPageState();
 }
 
-class _ChatInfoPageState extends State<ChatInfoPage> {
+class _ChatInfoPageState extends State<ChatInfoPage> with SingleTickerProviderStateMixin {
   Chat chat;
+  Animation<Color> colorAnimation;
+  AnimationController controller;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    controller = AnimationController(duration: const Duration(seconds: 3), vsync: this);
+    colorAnimation = ColorTween(begin: Theme.of(context).accentColor, end: Colors.black).animate(controller);
+    controller.forward();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +37,7 @@ class _ChatInfoPageState extends State<ChatInfoPage> {
         child: ListView(
           physics: BouncingScrollPhysics(), // iOS-like overscroll animáció
           children: <Widget>[
-            Text(
-              chat.title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 42,
-              ),
-            ),
+            ChatInfoAnimatedHeader(animation: colorAnimation, text: chat.title),
             Text(
               CustomLocalizations.of(context).participants,
               style: TextStyle(

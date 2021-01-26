@@ -13,7 +13,7 @@ Keresztplatformos mobilfejlesztés kötelező program
 | SQLite adatbázis használata                     | 10| van |
 | Többnyelvű alkalmazás készítése, nyelvválasztási lehetőséggel | 10| van, de választó nincs |
 | Egy screen, ami alkalmazkodik a különböző méretű képernyőkhöz | 5 | Profil -> térkép |
-| Animáció | 5 |
+| Animáció | 5 | van |
 | Választás a nyévjegyzékből | 5 | van |
 | Tesztek legalább 2 képernyőre | 15| van |
 | Google térkép használata | 10| openmaps van |

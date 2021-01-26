@@ -15,5 +15,5 @@ Keresztplatformos mobilfejlesztés kötelező program
 | Egy screen, ami alkalmazkodik a különböző méretű képernyőkhöz | 5 | Profil -> térkép |
 | Animáció | 5 |
 | Választás a nyévjegyzékből | 5 | van |
-| Tesztek legalább 2 képernyőre | 15|
+| Tesztek legalább 2 képernyőre | 15| van |
 | Google térkép használata | 10| openmaps van |

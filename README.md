@@ -17,3 +17,5 @@ Keresztplatformos mobilfejlesztés kötelező program
 | Választás a nyévjegyzékből | 5 | van |
 | Tesztek legalább 2 képernyőre | 15| van |
 | Google térkép használata | 10| openmaps van |
+
+A kész apk elérhető a [build/app/outputs/flutter-apk](build/app/outputs/flutter-apk/app-release.apk) mappában.
